@@ -1,0 +1,44 @@
+body {
+    background-color: #fafafa;
+}
+
+.search-bar {
+    display: inline-block;
+}
+
+#search_box {
+    margin-left: 40px;
+}
+
+#content {
+    max-width: 1200px;
+    margin: 0 35% 0 100px;
+}
+
+#search-result {
+    margin-top: 5px;
+    color: grey;
+}
+
+.url-title {
+    text-decoration: none;
+}
+
+.url-address {
+    text-decoration: none;
+    color: green;
+}
+
+h3, h4 {
+    margin: 0;
+    font-weight: 500;
+}
+
+#navigator {
+    margin: 40px 0 20px 20px;
+}
+
+#bottom-segment {
+    border-top: 1px solid #e4e4e4;
+    border-bottom: none;
+}

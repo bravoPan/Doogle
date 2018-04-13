@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doogle</title>
+    <link rel="stylesheet" href={% static "css/search_page.css" %}>
+    <link rel="stylesheet" href={% static "css/semantic.css" %}>
+    <link rel="stylesheet" href={% static "css/search.css" %}>
+</head>
+<body>
+<div class="content" id="main" style="padding: 15%">
+    <center>
+        <img src="../static/img/doogle.png" style="width: 300px;">
+        <div class="ui fluid icon input">
+            <input onkeydown="jump()" type="text" placeholder="搜索你所想..." style="margin-top:30px;" id="search_box">
+            <i></i>
+        </div>
+    </center>
+</div>
+</body>
+
+<script type="text/javascript">
+    function jump() {
+        var text = document.getElementById("search_box");
+        var event = arguments.callee.caller.arguments[0] || window.event;
+        if (event.keyCode === 13) {
+            text.focus();
+            window.location.href = window.location.href + text.value;
+        }
+    }
+</script>
+</html>

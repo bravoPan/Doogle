@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>search result</title>
+    <link rel="stylesheet" href={% static "css/semantic.css" %}>
+    <link rel="stylesheet" href={% static "css/display_search.css" %}>
+</head>
+<body>
+<div class="ui vertical segment very big padded">
+    <div class="ui fluid icon small input" style="width: 800px;padding: 1%;">
+        <img onclick="jump_to_home()" src={% static "img/doogle.png" %}   id="search-image" style="width: 10%; height: 10%; margin-top: 1%;">
+        <input type="text" onkeydown="jump()" placeholder="搜索你所想..." style="margin-left: 30px;" id="search-box">
+    </div>
+</div>
+
+
+<div id="content">
+    <div id="search-result">
+        找到约 {{ result_number }} 条结果 （用时 {{ time }} 秒）
+    </div>
+
+    {% for page_info in pages_info %}
+        <div class="display-content" style="margin-top: 20px;font-family: arial, helvetica, sans-serif;">
+            <h3><a class="url-title" href="{{ page_info.url }}">{{ page_info.title }}</a></h3>
+            <h4><a class="url-address">{{ page_info.url }}</a></h4>
+            <p style="text-align: justify">
+                {{ page_info.text | truncatechars:600 }}
+            </p>
+        </div>
+    {% endfor %}
+
+    <!# page-navigation #>
+    <table id="navigator">
+        <tr>
+            <td><a>1</a></td>
+            <td><a>2</a></td>
+            <td><a>3</a></td>
+            <td><a>4</a></td>
+            <td><a>5</a></td>
+            <td><a>6</a></td>
+            <td><a>7</a></td>
+            <td><a>8</a></td>
+            <td><a>9</a></td>
+            <td><a>10</a></td>
+            <td><a style="display: block; margin-left: 10px;">>下一页</a></td>
+        </tr>
+    </table>
+</div>
+
+<div class="ui vertical large segment" id="bottom-segment">
+    <ul style="margin: 0 100px 0 100px;">
+        <li>
+            90014 加利福尼亚州洛杉矶 - 基于您的 IP 地址
+        </li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    var home = window.location.href.match(/.*search\//);
+
+    function jump_to_home() {
+        window.location.href = home;
+    }
+
+    function jump() {
+        var text = document.getElementById("search-box");
+        var event = arguments.callee.caller.arguments[0] || window.event;
+        if (event.keyCode === 13) {
+            text.focus();
+            window.location.href = home + text.value;
+        }
+    }
+</script>
+</body>
+</html>

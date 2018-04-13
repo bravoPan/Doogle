@@ -26,26 +26,31 @@ class Choice(models.Model):
         return self.choice_text
 
 
-class UrlList(models.Model):
+class PageInfo(models.Model):
     url = models.URLField(max_length=200)
+    text = models.TextField(max_length=20000)
+    title = models.TextField(max_length=200)
+
+    def __str__(self):
+        return self.title
+
+
+class Href(models.Model):
+    url = models.URLField(max_length=200)
+    url_location_id = models.ForeignKey(PageInfo, on_delete=models.CASCADE)
+    click_time = models.IntegerField(default=0)
+    date = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return self.url
 
 
 class WordList(models.Model):
-    word_id = models.ForeignKey(UrlList, on_delete=models.CASCADE)
-    word = models.CharField(max_length=200)
+    url_location_id = models.ForeignKey(PageInfo, on_delete=models.CASCADE)
+    word = models.TextField(max_length=200)
+    word_location = models.IntegerField()
+
+    def __str__(self):
+        return self.word
 
 
-class WordLocation(models.Model):
-    url_id = models.ForeignKey(UrlList, on_delete=models.CASCADE)
-    word_id = models.ForeignKey(WordList, on_delete=models.CASCADE)
-    location = models.CharField(max_length=200)
-
-
-class Link(models.Model):
-    from_id = models.IntegerField()
-    to_id = models.IntegerField()
-
-
-class LinkWords(models.Model):
-    word_id = models.ForeignKey(WordList, on_delete=models.CASCADE)
-    link_id = models.ForeignKey(Link, on_delete=models.CASCADE)

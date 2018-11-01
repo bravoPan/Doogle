@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
+from search_engine import views
 
 urlpatterns = [
-    path('search/', include("search_engine.urls")),
-    path('admin/', admin.site.urls),
+    re_path(r"^search/$", views.index, name="index"),
+    # path('search/', include("search_engine.urls")),
+    path(r'search/<str:key_words>/', views.display, name="search_keywords"),
+    path('admin/', admin.site.urls)
 ]

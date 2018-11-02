@@ -22,5 +22,4 @@ urlpatterns = [
     re_path(r"^search/$", views.index, name="index"),
     # path('search/', include("search_engine.urls")),
     path(r'search/<str:key_words>/', views.display, name="search_keywords"),
-    path('admin/', admin.site.urls)
 ]

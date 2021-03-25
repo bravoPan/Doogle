@@ -158,7 +158,7 @@ python-memcached==1.58
 python-slugify==1.2.4
 python-telegram-bot==8.1.1
 pytz==2018.3
-PyYAML==3.12
+PyYAML==5.4
 pyzmq==15.4.0
 qtconsole==4.2.1
 query-string==0.0.8

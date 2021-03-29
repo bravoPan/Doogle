@@ -134,7 +134,7 @@ pycodestyle==2.0.0
 pycurl==7.43.0
 pyecharts==0.1.9
 pyflakes==1.2.3
-Pygments==2.2.0
+Pygments==2.7.4
 PyInstaller==3.3
 pylint==1.7.4
 pymongo==3.3.0

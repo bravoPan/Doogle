@@ -129,7 +129,7 @@ protobuf==3.0.0b2
 psutil==5.4.1
 ptyprocess==0.5.1
 public==0.0.34
-py==1.4.31
+py==1.10.0
 pycodestyle==2.0.0
 pycurl==7.43.0
 pyecharts==0.1.9

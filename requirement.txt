@@ -70,7 +70,7 @@ image==1.5.11
 imagesize==0.7.1
 IPy==0.83
 ipykernel==4.4.1
-ipython==4.2.0
+ipython==7.16.3
 ipython-genutils==0.1.0
 ipywidgets==5.2.2
 isort==4.2.15

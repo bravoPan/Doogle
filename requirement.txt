@@ -64,7 +64,7 @@ get==0.0.11
 gitsome==0.7.2
 gnureadline==6.3.3
 h5py==2.7.1
-httpie==0.9.6
+httpie==3.1.0
 idna==2.5
 image==1.5.11
 imagesize==0.7.1

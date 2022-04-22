@@ -142,7 +142,7 @@ PyMySQL==0.7.11
 pyocr==0.4.7
 pyparsing==2.2.0
 pyPdf==1.13
-PyPDF2==1.26.0
+PyPDF2==1.27.5
 pypng==0.0.18
 PyQRCode==1.2.1
 pyquery==1.2.17

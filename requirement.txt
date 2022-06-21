@@ -106,7 +106,7 @@ nbconvert==4.2.0
 nbformat==4.1.0
 networkx==2.0
 notebook==4.2.2
-numpy==1.14.0
+numpy==1.22.0
 numpydoc==0.7.0
 olefile==0.44
 openpyxl==2.4.8

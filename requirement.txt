@@ -125,7 +125,7 @@ ply==3.10
 post==0.0.8
 pprint==0.1
 prompt-toolkit==1.0.5
-protobuf==3.0.0b2
+protobuf==3.18.3
 psutil==5.4.1
 ptyprocess==0.5.1
 public==0.0.34
